@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "feddare"
+version = "0.1.0"
+description = "Core PyTorch implementation of FedDARE"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+    {name = "Lujin Zhao"},
+    {name = "Sujuan Qin"},
+    {name = "Yijie Shi"},
+    {name = "Wenmin Li"},
+    {name = "Fei Gao"},
+    {name = "Zhengping Jin"},
+]
+dependencies = [
+    "numpy>=1.24,<3",
+    "PyYAML>=6.0,<7",
+    "torch>=2.2,<3",
+    "torchvision>=0.17,<1",
+    "tqdm>=4.66,<5",
+]
+
+[project.urls]
+Repository = "https://github.com/zlj012366/FedDARE"
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "ruff>=0.6,<1"]
+
+[project.scripts]
+feddare = "feddare.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"

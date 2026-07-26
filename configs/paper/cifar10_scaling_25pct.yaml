@@ -1,0 +1,50 @@
+dataset:
+  name: cifar10
+  root: ./data
+  download: true
+  iid: false
+  dirichlet_alpha: 0.5
+  split: [0.8, 0.1, 0.1]
+  min_client_samples: 20
+federation:
+  num_clients: 50
+  participation_rate: 0.2
+  rounds: 600
+  malicious_ratio: 0.25
+model:
+  family: cnn
+  heterogeneous: true
+  cnn_variants: [1, 2, 3, 4, 5]
+training:
+  local_epochs: 1
+  batch_size: 64
+  model_lr: 0.01
+  encoder_lr: 0.01
+  semantic_weight: 0.5
+  num_workers: 4
+encoder:
+  hidden_channels: 116
+  first_kernel: 7
+  second_kernel: 5
+  eca_kernel: 3
+behavior:
+  enabled: true
+  synthetic_size: 10
+  virtual_steps: 5
+  sam_radius: 0.05
+  virtual_lr: 0.01
+  distill_lr: 0.01
+  threshold: 0.08
+  probe_pool_size: 4
+  probe_seed: 9173
+attack:
+  name: scaling
+  target_label: 0
+  poison_fraction: 0.5
+  scale: 10.0
+runtime:
+  seed: 2026
+  device: auto
+  deterministic: true
+  eval_every: 10
+  output_dir: ./runs/cifar10_scaling_25pct_seed2026

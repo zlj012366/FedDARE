@@ -1,0 +1,6 @@
+numpy>=1.24,<3
+PyYAML>=6.0,<7
+torch>=2.2,<3
+torchvision>=0.17,<1
+tqdm>=4.66,<5
+
