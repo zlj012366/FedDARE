@@ -211,13 +211,4 @@ These files record the resolved configuration, execution environment, client dat
 Additional implementation details and code-to-method mappings are available in [docs/IMPLEMENTATION.md](docs/IMPLEMENTATION.md).
 
 ## 📚 Citation
-
-```bibtex
-@article{zhao_feddare,
-  title  = {FedDARE: Dual-phase Alignment and Robust Evaluation for Model-Heterogeneous Personalized Federated Learning},
-  author = {Zhao, Lujin and Qin, Sujuan and Shi, Yijie and Li, Wenmin and Gao, Fei and Jin, Zhengping},
-  note   = {Manuscript under review}
-}
-```
-
 > This citation entry will be updated once the manuscript is accepted or published.
